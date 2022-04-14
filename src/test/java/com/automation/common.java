@@ -6,6 +6,39 @@ import java.util.Map;
 import java.util.Set;
 
 public class common implements commonMethodInt, commonMethodString, commonCollectionMethods {
+
+      //is prime number
+      public boolean isPrimeWhileLoop(int n){
+            int i = 2;
+            while(i < n){
+                  if(n % i == 0){
+                        return false;
+                  }
+                  i++;
+            }
+            return true;
+      }
+
+      public boolean isPrimeDoWhileLoop(int n){
+            int i = 2;
+            do {
+                  if(n % i == 0){
+                        return false;
+                  }
+                  i++;
+            } while(i < n);
+            return true;
+      }
+
+      public boolean isPrimeForLoop(int n){
+            for(int i = 2; i < n; i++){
+                  if(n % i == 0){
+                        return false;
+                  }
+            }
+            return true;
+      }
+      
       @Override
       public boolean isPrime(int n) {
             if (n <= 1) {

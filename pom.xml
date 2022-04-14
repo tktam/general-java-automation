@@ -180,11 +180,11 @@
         <configuration>
           <!-- Suite testng xml file to consider for test execution -->
           <suiteXmlFiles>
-            <!-- <suiteXmlFile>testng.xml</suiteXmlFile> -->
+            <suiteXmlFile>testng.xml</suiteXmlFile>
             <!-- <suiteXmlFile>suites-test-testng.xml</suiteXmlFile> -->
           </suiteXmlFiles>
           <includes>
-            <include>**/com.automation/*Junit.java</include>
+            <!-- <include>**/com.automation/*Junit.java</include> -->
           </includes>
           <skipTests>false</skipTests>
         </configuration>

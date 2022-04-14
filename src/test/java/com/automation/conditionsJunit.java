@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.lang.management.ManagementFactory;
+import com.automation.MynumberClass;
 
 /**
  * Unit test for simple App.
@@ -23,6 +24,32 @@ public class conditionsJunit extends common {
       }
 
       @Test
+      public void checkNumberClass_01() {
+            MynumberClass myNumberClass = new MynumberClass(37);
+            Assert.assertTrue("This is not a prime", myNumberClass.checkIfPrime());
+            Assert.assertFalse("This is wrong", MynumberClass.needToBeInitiated);
+      }
+
+      @Test
+      public void testMychar() {
+            String myString = "JavaProgramming.com";
+            char[] listOfChars = { 'J', 'A', 'V', 'A' };
+            String myCourse = new String(listOfChars);
+            System.out.println(myCourse);
+            System.out.print(myString+"\n");
+      }
+
+      @Test
+      public void conCatStrings() {
+            String str1 = "Java";
+            String str2 = "Programming.com";
+            String str3 = str1.concat(str2);
+            System.out.println("Concat two string "+ str1+" and "+str2 +" = "+str3);
+            String str4 = str1+str2;
+            System.out.println(String.format("Format %d strings \"%s\" and \"%s\" : %s",2,str1, str2 ,str4));
+      }
+
+      @Test(timeout = 1000)
       public void checkIfNumberIsPrime_01() {
             Assert.assertTrue("This is not a prime", isPrime(13));
       }
