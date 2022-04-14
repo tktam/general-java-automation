@@ -1,20 +1,13 @@
 package com.automation;
 
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.*;
-
-
-
 /**
  * Unit test for simple App.
  */
 public class dataTypeJunit 
 {
-    /**
-     * DataType Test :-)
-     */
     @Before
     public void start_testing() {
           System.out.println("start_testing");

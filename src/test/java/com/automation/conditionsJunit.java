@@ -5,7 +5,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.lang.management.ManagementFactory;
-import com.automation.MynumberClass;
 
 /**
  * Unit test for simple App.
