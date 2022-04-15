@@ -24,6 +24,7 @@ public class loopsJunit {
 
       @Test
       public void checkIfNumberIsPrime_01() {
+            System.out.println("checkIfNumberIsPrime_01");
             Assert.assertTrue("This is not a prime", myMethodInt.isPrime(13));
       }
 

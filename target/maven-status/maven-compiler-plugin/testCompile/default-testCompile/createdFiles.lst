@@ -9,6 +9,7 @@ com\automation\conditionsCollectionsJunit.class
 com\automation\DP.class
 com\automation\commonCollectionMethods.class
 com\automation\conditionsTestNGIT.class
+com\automation\JunitOrders.class
 com\automation\AppTest.class
 com\automation\conditionsJunit.class
 com\automation\TestNgApproach.class

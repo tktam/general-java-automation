@@ -73,10 +73,12 @@ public class conditionsJunit extends common {
             String a = "Hello World";
             String b = "o W";
             try {
-                  Assert.assertTrue(String.format("%s is not a part of %s", b, a), isSubstring(a, b));
+                  Assert.assertTrue(String.format("%s is not a part of %s", b, a), isSubstring(a.toLowerCase(), b.toLowerCase()));
             } catch (Exception e) {
                   System.out.println(e.getMessage());
             }
+            String testStr = a.toLowerCase();
+            String subStr = b.toLowerCase();
             System.out.println(String.format("\'%s\' is  a part of \'%s\'", b, a));
       }
 

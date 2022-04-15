@@ -38,7 +38,7 @@ public class common implements commonMethodInt, commonMethodString, commonCollec
             }
             return true;
       }
-      
+
       @Override
       public boolean isPrime(int n) {
             if (n <= 1) {

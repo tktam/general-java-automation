@@ -15,11 +15,11 @@ public class dataTypeJunit
 
     @Test
     public void practicing_test_01() {
-          float a = 1.2f;
+          int a = 5;
           int b = 3;
           int c = 8;
           System.out.println("Practice test 1");
-          Assert.assertTrue(a+b>c);
+          Assert.assertTrue("Failed result!!",a+b>c);
     }
 
     @Test
