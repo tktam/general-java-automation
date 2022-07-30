@@ -3,6 +3,7 @@ package com.automation;
 import org.junit.*;
 import org.junit.Assert;
 import org.junit.Test;
+import org.testng.annotations.DataProvider;
 
 import java.lang.management.ManagementFactory;
 import java.util.HashMap;
@@ -44,7 +45,7 @@ public class conditionsCollectionsJunit {
                         { "TC2", "val3", "val4" },
                         { "TC3", "val5", "val6" }
             };
-            contextString = String.format("${_onTestCaseData.[%i].[%j]}", 1, 2);
+            contextString = String.format("${_onTestCaseData.[%d].[%d]}", 1, 2);
             int row = 0;
             int col = 0;
             // find substring in string splitted by dot
@@ -54,11 +55,11 @@ public class conditionsCollectionsJunit {
             {
                   if (contextStringArray.length > 1) {
                         // find index of array
-                        row = Integer.parseInt(contextStringArray[0]);
+                        row = Integer.parseInt(contextStringArray[1].replaceAll("(\\[)|(\\])",""));
                         // find index of array
-                        col = Integer.parseInt(contextStringArray[1]);
-                        String actual = colMed.getElement(dataSet, row, col);
-                        Assert.assertEquals("val2", actual);
+                        col = Integer.parseInt(contextStringArray[2].replaceAll("(\\[)|(\\])}",""));
+                        String actual = colMed.getElement(dataSet, col, row);
+                        Assert.assertEquals("val4", actual);
                   }
                   else  row = Integer.parseInt(contextStringArray[0]);
             } catch (Exception e) {
@@ -66,8 +67,11 @@ public class conditionsCollectionsJunit {
             }
       }
 
+
+
       @AfterClass
       public static void end_testing() {
             System.out.println("end_testing");
       }
+
 }

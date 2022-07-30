@@ -148,16 +148,16 @@
         <executions>
           <execution>
             <id>failsafe-integration-tests</id>
-            <!-- <phase>integration-test</phase> -->
+            <phase>integration-test</phase>
             <goals>
               <goal>integration-test</goal>
               <goal>verify</goal>
             </goals>
             <configuration>
               <includes>
-                <include>**/FirstRunTestIT.java</include>
+                <include>**/com.automation/*Junit.java</include>
               </includes>
-              <skip>true</skip>
+              <skip>false</skip>
               <showSuccess>true</showSuccess>
             </configuration>
           </execution>
@@ -186,7 +186,7 @@
           <includes>
             <include>**/com.automation/*Junit.java</include>
           </includes>
-          <skipTests>false</skipTests>
+          <skipTests>true</skipTests>
         </configuration>
       </plugin>
       <plugin>
@@ -196,7 +196,7 @@
         <executions>
           <execution>
             <id>execution</id>
-            <phase>pre-integration-test</phase>
+            <phase>verify</phase>
             <goals>
               <goal>generate</goal>
             </goals>

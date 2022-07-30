@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.lang.management.ManagementFactory;
+import java.util.Scanner;
 
 /**
  * Unit test for simple App.
@@ -81,6 +82,41 @@ public class conditionsJunit extends common {
             String subStr = b.toLowerCase();
             System.out.println(String.format("\'%s\' is  a part of \'%s\'", b, a));
       }
+
+      @Test
+      public void testexp() {
+            Scanner scan = new Scanner(System.in);
+            int i = scan.nextInt();
+            double d = scan.nextDouble();
+            String s =  scan.nextLine();
+            while(scan.hasNextLine()) {
+                  s += scan.next() + " ";
+              }
+              //
+            // Write your code here.
+    
+            System.out.println("String: " + s);
+            System.out.println("Double: " + d);
+            System.out.println("Int: " + i);
+            scan.close();
+        }
+
+        
+      @Test
+      public void testexp1() {
+            Scanner sc=new Scanner(System.in);
+            System.out.println("================================");
+            for(int i=0;i<3;i++)
+            {
+                String s1=sc.next();
+                int x=sc.nextInt();
+                //Complete this line
+                System.out.printf("%-15s",s1);
+                System.out.printf("%03d%n",x);
+            }
+            System.out.println("================================");
+            sc.close();
+        }
 
       @AfterClass
       public static void end_testing() {

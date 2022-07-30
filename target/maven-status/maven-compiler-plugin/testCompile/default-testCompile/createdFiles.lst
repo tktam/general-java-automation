@@ -1,5 +1,6 @@
 com\automation\dataTypeJunit.class
 com\automation\commonMethodInt.class
+com\automation\DataLoader.class
 com\automation\loopsJunit.class
 com\automation\common.class
 com\automation\testDP.class
@@ -11,5 +12,6 @@ com\automation\commonCollectionMethods.class
 com\automation\conditionsTestNGIT.class
 com\automation\JunitOrders.class
 com\automation\AppTest.class
+com\automation\testDataLoader.class
 com\automation\conditionsJunit.class
 com\automation\TestNgApproach.class

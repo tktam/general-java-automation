@@ -28,4 +28,7 @@ public class MynumberClass{
             this.isPrime = true;
             return isPrime;
       }
+
+      
+      
 }

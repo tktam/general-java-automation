@@ -4,8 +4,109 @@ package com.automation;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class common implements commonMethodInt, commonMethodString, commonCollectionMethods {
+
+      //print Fibonacci
+      public void printFibonacci(int n) {
+            int a = 0;
+            int b = 1;
+            int c = 0;
+            System.out.print(a + " ");
+            System.out.print(b + " ");
+            for (int i = 0; i < n; i++) {
+                  c = a + b;
+                  System.out.print(c + " ");
+                  a = b;
+                  b = c;
+            }
+      }
+
+      //Print Fibonacci using recursion
+      public void printFibonacciRecursion(int n) {
+            if (n == 0) {
+                  return;
+            } else {
+                  printFibonacciRecursion(n - 1);
+                  System.out.print(fibonacci(n) + " ");
+            }
+      }
+
+      //filter integer in Strings
+      public List<Integer> filterInteger(List<String> list) {
+            return list.stream().map(Integer::parseInt).collect(Collectors.toList());
+      }
+
+      //Fibonacci using recursion
+      public int fibonacci(int n) {
+            if (n == 0) {
+                  return 0;
+            } else if (n == 1) {
+                  return 1;
+            } else {
+                  return fibonacci(n - 1) + fibonacci(n - 2);
+            }
+      }
+
+
+      public int[] findNonRepeatElement(int[] nums) {
+            int[] result = new int[10];
+            for (int i = 0; i < nums.length; i++) {
+                  int counter = 0;
+                  for (int j = 0; j < nums.length; j++) {
+                        if (nums[i] == nums[j]) {
+                              counter++;
+                        }
+                  }
+                  if (counter == 1) {
+                        result[i] = nums[i];
+                  }
+            }
+            return result;
+      }
+
+
+
+
+      public int[] findNonRepeatingElement(int[] nums) {
+            int[] temp = new int[nums.length];
+            for (int i = 0; i < nums.length; i++) {
+                  for (int j = 0; j < nums.length; j++) {
+                        if (nums[i] == nums[j]) {
+                              temp[i]++;
+                        }
+                  }
+            }
+            int[] result = new int[nums.length];
+            int count = 0;
+            for (int i = 0; i < nums.length; i++) {
+                  if (temp[i] == 1) {
+                        result[count] = nums[i];
+                        count++;
+                  }
+            }
+            return result;
+      }
+
+
+
+
+      //dynamic programming fibonacci
+      public void fibonacciDP(int n) {
+            int[] fib = new int[n + 1];
+            fib[0] = 0;
+            fib[1] = 1;
+            for (int i = 2; i <= n; i++) {
+                  fib[i] = fib[i - 1] + fib[i - 2];
+            }
+            for (int i = 0; i <= n; i++) {
+                  System.out.print(fib[i] + " ");
+            }
+      }
+      
+
+
 
       //is prime number
       public boolean isPrimeWhileLoop(int n){
@@ -140,6 +241,7 @@ public class common implements commonMethodInt, commonMethodString, commonCollec
             return false;
       }
 
+      
       // check if array contains subarray
       @Override
       public boolean containsSubArray(String[] strings, String[] subArray) {

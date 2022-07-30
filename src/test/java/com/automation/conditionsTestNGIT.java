@@ -3,6 +3,7 @@ package com.automation;
 import org.junit.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.lang.management.ManagementFactory;
@@ -45,6 +46,16 @@ public class conditionsTestNGIT extends common {
                   System.out.println(e.getMessage());
             }
             System.out.println(String.format("\'%s\' is  a part of \'%s\'", b, a));
+      }
+
+      @Test(description ="test couting substring", dataProvider = "data-provider")
+      public void testSubStringCounter(String str, String sub, String count){
+            Assert.assertEquals(countSubstring(str, sub),Integer.parseInt(count));
+      }
+
+      @DataProvider(name = "data-provider")
+      public Object[][] dpMethod() {
+            return new Object[][] { {"abcaaabds !!$#$%732afHASHF","2af","1" }, {"abcaaabds !!$#$%732afHASHF","a","5" } };
       }
 
       @AfterClass
